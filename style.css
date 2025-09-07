@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ffecec;
+  margin: 0;
+  height: 100vh;
+}
+
+/* Floating Chat Button */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f8b6b6;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+
+.chat-toggle:hover {
+  background: #f28c8c;
+}
+
+/* Chat Container */
+.chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 360px;
+  height: 500px;
+  background: #fff5f5;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.chat-header {
+  background: #fceaea;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px solid #f0dcdc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Messages */
+.chat-box {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: #f8b6b6;
+  padding: 10px 14px;
+  border-radius: 16px 16px 4px 16px;
+  max-width: 70%;
+  font-size: 14px;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 16px 16px 16px 4px;
+  max-width: 70%;
+  font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Input Area */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+  background: #fff;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid #f8b6b6;
+  border-radius: 20px;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.send-btn {
+  background: #f8b6b6;
+  border: none;
+  border-radius: 50%;
+  margin-left: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  transition: background 0.2s;
+}
+
+.send-btn:hover {
+  background: #f28c8c;
+}
