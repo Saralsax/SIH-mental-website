@@ -484,7 +484,7 @@
 
         /* ===== Team Section ===== */
         .team-section {
-            padding: 80px 0;
+            padding: 10px 0;
             background: #2c3e50;
             color: white;
             text-align: center;
@@ -555,8 +555,9 @@
                 height: 250px;
             }
 
-            .nav-links {
-                display: none;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
         }
     </style>
@@ -632,9 +633,8 @@
                     <p>Receive ongoing care and support for your wellness journey</p>
                 </div>
             </div>
-        <a href ="CB/CBPage.html">
+            
             <button class="consult-now">Consult Now</button>
-        </a>
         </div>
     </section>
 
@@ -690,7 +690,7 @@
                         <p>Nutritional supplements for wellness</p>
                     </div>
                 </div>
-                <div class="shop-item">
+                 <div class="shop-item">
                     <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="First Aid">
                     <div class="shop-item-content">
                         <h3>First Aid</h3>
@@ -711,7 +711,7 @@
                         <p>Home healthcare monitoring devices</p>
                     </div>
                 </div>
-                
+              
             </div>
         </div>
     </section>
@@ -727,15 +727,15 @@
                     <p>Comprehensive mental health support with licensed professionals</p>
                     <div class="program-stats">
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">24/7</div>
                             <div class="stat-label">Available</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">100+</div>
                             <div class="stat-label">Therapists</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">50k+</div>
                             <div class="stat-label">Patients</div>
                         </div>
                     </div>
@@ -746,15 +746,15 @@
                     <p>Professional medication consultation and management services</p>
                     <div class="program-stats">
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">15min</div>
                             <div class="stat-label">Delivery</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">500+</div>
                             <div class="stat-label">Medicines</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">24/7</div>
                             <div class="stat-label">Support</div>
                         </div>
                     </div>
@@ -765,15 +765,15 @@
                     <p>Immediate medical attention and emergency healthcare services</p>
                     <div class="program-stats">
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">5min</div>
                             <div class="stat-label">Response</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">24/7</div>
                             <div class="stat-label">Available</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number"></div>
+                            <div class="stat-number">100%</div>
                             <div class="stat-label">Coverage</div>
                         </div>
                     </div>
@@ -786,7 +786,30 @@
     
 
     <!-- ===== Team Stats ===== -->
-    
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Team Stats</h2>
+            <div class="team-stats">
+                <div class="team-stat">
+                    <div class="team-stat-number">500+</div>
+                    <div class="team-stat-label">Healthcare Professionals</div>
+                </div>
+                <div class="team-stat">
+                    <div class="team-stat-number">100k+</div>
+                    <div class="team-stat-label">Patients Served</div>
+                </div>
+                <div class="team-stat">
+                    <div class="team-stat-number">24/7</div>
+                    <div class="team-stat-label">Support Available</div>
+                </div>
+                <div class="team-stat">
+                    <div class="team-stat-number">98%</div>
+                    <div class="team-stat-label">Patient Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Tab functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -799,50 +822,7 @@
             });
         });
 
-        // Feedback navigation
-        const feedbacks = [
-            {
-                name: "Anjali Sharma",
-                role: "Telemedicine Customer",
-                text: "MSFT Pro is a website and mobile app for you to feel better or get medical help. They offer you a 24/7 doctor service with Medicine Purchasing Facility. The platform has been incredibly helpful for my mental health journey.",
-                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                name: "David Johnson",
-                role: "Mental Health Patient",
-                text: "The 24/7 availability and professional support have been life-changing. The doctors are knowledgeable and the platform is easy to use. I highly recommend this service to anyone seeking mental health support.",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                name: "Sarah Williams",
-                role: "Regular User",
-                text: "Exceptional service with caring professionals. The medicine purchasing facility is convenient and the consultation quality is outstanding. This platform has made healthcare so much more accessible.",
-                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            }
-        ];
-
-        let currentFeedback = 0;
-
-        function updateFeedback() {
-            const feedback = feedbacks[currentFeedback];
-            document.querySelector('.feedback-image img').src = feedback.image;
-            document.querySelector('.feedback-text').textContent = `"${feedback.text}"`;
-            document.querySelector('.feedback-author').textContent = feedback.name;
-            document.querySelector('.feedback-role').textContent = feedback.role;
-        }
-
-        function nextFeedback() {
-            currentFeedback = (currentFeedback + 1) % feedbacks.length;
-            updateFeedback();
-        }
-
-        function previousFeedback() {
-            currentFeedback = (currentFeedback - 1 + feedbacks.length) % feedbacks.length;
-            updateFeedback();
-        }
-
-        // Auto-rotate feedbacks
-        setInterval(nextFeedback, 8000);
+       
     </script>
 </body>
 </html>
