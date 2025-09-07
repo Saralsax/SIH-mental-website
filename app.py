@@ -1,9 +1,18 @@
-from flask import Flask, request, jsonify, render_template
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 import subprocess
 
-app = Flask(__name__)
+app = FastAPI()
 
-def query_ollama(prompt):
+# Mount static files if you have CSS/JS inside "static" folder
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Set up Jinja2 templates (same as Flask render_template)
+templates = Jinja2Templates(directory="templates")
+
+def query_ollama(prompt: str) -> str:
     """Send prompt to Ollama and return response."""
     try:
         result = subprocess.run(
@@ -15,17 +24,18 @@ def query_ollama(prompt):
     except Exception as e:
         return f"Error connecting to Ollama: {e}"
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+@app.get("/", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
-@app.route("/chat", methods=["POST"])
-def chat():
-    user_message = request.json.get("message", "")
+@app.post("/chat")
+async def chat(request: Request):
+    data = await request.json()
+    user_message = data.get("message", "")
     if not user_message:
-        return jsonify({"reply": "Please say something."})
+        return JSONResponse(content={"reply": "Please say something."})
+    
     bot_reply = query_ollama(user_message)
-    return jsonify({"reply": bot_reply})
+    return JSONResponse(content={"reply": bot_reply})
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# Run with: uvicorn app:app --reload

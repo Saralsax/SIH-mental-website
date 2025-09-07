@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Mental Health Chatbot</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Use FastAPI’s url_for (via Jinja2Templates) -->
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
   <!-- Floating Chat Button -->
